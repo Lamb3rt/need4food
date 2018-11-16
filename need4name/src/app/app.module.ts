@@ -9,6 +9,8 @@ import { AngularFireModule } from '@angular/fire';
 
 import { environment } from '../environments/environment';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +18,8 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFontAwesomeModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

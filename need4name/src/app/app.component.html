@@ -1,33 +1,36 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="dashboard">
+  <div class="section">
+    <div class="section-header">Current orders</div>
+    <div class="section-content">
+      <div class="order" *ngFor="let order of orders | async">
+        <div class="restaurant-logo">
+          <img src="http://pastainbox.com/assets/img/logo.png" />
+        </div>
+        <div class="restaurant-name">{{order.restaurant}}</div>
+        <div class="order-people">
+          <span class="order-people-icon"><i class="fa fa-users"></i></span>
+          <span class="order-people-value">{{order.users.length}}</span>
+        </div>
+        <div class="order-money">
+          <span class="order-money-icon"><i class="fa fa-money"></i></span>
+          <span class="order-money-value">60%</span>
+        </div>
+        <div class="order-button-join">JOIN</div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-header">Hottest restaurant</div>
+    <div class="section-content">
+      <div *ngFor="let restaurant of restaurants | async">
+        {{ restaurant | json }}
+      </div>
+    </div>
+  </div>
+  <div class="section"></div>
+  <div class="section">
+    <div class="section-header">Best restaurant</div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-<hr/>
-<ul>
-  <li *ngFor="let restaurant of restaurants | async">
-    {{ restaurant | json }}
-  </li>
-</ul>
-<hr/>
-<ul>
-  <li *ngFor="let order of orders | async">
-    {{ order | json }}
-  </li>
-</ul>
 
 <router-outlet></router-outlet>

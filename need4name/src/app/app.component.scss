@@ -1,0 +1,124 @@
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .section {
+        flex-basis: calc(50% - 20px);
+        padding-right: 20px;
+
+        .section-header {
+            border-left: 2px;
+            border-left-color: #ff2e2e;
+            border-left-style: solid;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            padding-left: 10px;
+        }
+    }
+
+    .order {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        row-gap: 20px;
+
+        border-width: 2px;
+        border-color: #314148;
+        border-radius: 5px;
+        border-style: solid;
+
+        margin: 10px 5px;
+        padding: 30px 20px;
+        
+        font-weight: bold;
+
+        .restaurant-logo {
+            display: flex; 
+            justify-content: center;
+            flex-direction: row;
+            flex-basis: calc(60%); 
+
+            text-align: center;
+            
+            img {
+                width: 90%;
+            }
+        }
+
+        .restaurant-name {
+            display: flex; 
+            flex-basis: calc(40%);  
+            justify-content: center;
+            flex-direction: row;
+
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .order-people {
+            display: flex; 
+            flex-basis: calc(30%);  
+            justify-content: center;
+            flex-direction: row;
+
+            font-size: 2em;
+            line-height: 2em;
+
+            .order-people-icon {
+                padding: 5px;
+            }
+            
+            .order-people-value {
+                padding: 5px;
+            }
+        }
+
+        .order-money {
+            display: flex; 
+            flex-basis: calc(30%);  
+            justify-content: center;
+            flex-direction: row;
+
+            font-size: 2em;
+            line-height: 2em;
+
+            .order-money-icon {
+                padding: 5px;
+            }
+            
+            .order-money-value {
+                padding: 5px;
+            }
+        }
+
+        .order-button-join {
+            display: flex; 
+            flex-basis: calc(40% - 4px - 14px);  
+            justify-content: center;
+            flex-direction: column;
+            align-self: center;
+
+            text-align: center;
+            color: #2e89ff;
+
+            border: 1px;
+            border-color: #2e89ff;
+            border-radius: 5px;
+            border-style: solid;
+
+            margin-left: 10px;
+
+            font-size: 1.5em;
+            line-height: 1.5em;
+
+            cursor: pointer;
+
+            &:hover {
+                border-color: #61BCFF;
+                color: #61BCFF;
+            } 
+        }
+    }
+}
